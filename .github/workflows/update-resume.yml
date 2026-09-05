@@ -1,5 +1,8 @@
 name: fetch-overleaf-resume
 
+permissions:
+  contents: write
+  
 on:
   schedule:
     - cron: '0 0 * * *' # Daily at midnight
