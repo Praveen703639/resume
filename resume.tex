@@ -1,169 +1,218 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[10pt, letterpaper]{article}
 
 % ---------- Packages ----------
 \usepackage[
-    top=0.50in,
-    bottom=0.45in,
-    left=0.60in,
-    right=0.60in
+    top=0.55in,
+    bottom=0.55in,
+    left=0.65in,
+    right=0.65in
 ]{geometry}
 
-\usepackage{enumitem}
 \usepackage{titlesec}
+\usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
-\usepackage{fontawesome5}
+\usepackage{tabularx}
 \usepackage{array}
+\usepackage{ragged2e}
 \usepackage{xcolor}
-\usepackage{setspace}
 
-% ---------- General Formatting ----------
+% ---------- Formatting ----------
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\renewcommand{\baselinestretch}{0.96}
 
-% ---------- Section Formatting ----------
 \titleformat{\section}
-  {\large\bfseries}
-  {}
-  {0pt}
-  {}
-  [\vspace{1pt}\titlerule]
+    {\large\bfseries}
+    {}
+    {0pt}
+    {}
+    [\vspace{-5pt}\rule{\linewidth}{0.5pt}]
 
-\titlespacing*{\section}
-  {0pt}
-  {6pt}
-  {4pt}
+\titlespacing{\section}{0pt}{7pt}{5pt}
 
-% ---------- Bullet Formatting ----------
 \setlist[itemize]{
-    leftmargin=18pt,
-    itemsep=0.5pt,
-    topsep=1.5pt,
+    leftmargin=15pt,
+    itemsep=1.5pt,
+    topsep=2pt,
     parsep=0pt,
     partopsep=0pt
 }
 
-% ---------- Custom Commands ----------
-\newcommand{\resumeProject}[2]{
-    \noindent
-    \textbf{#1}
-    \hfill
-    {\small\color{gray}#2}
+\renewcommand{\labelitemi}{\small\textbullet}
+
+% ---------- Custom commands ----------
+\newcommand{\resumeItem}[1]{
+    \item \small #1
 }
 
-\newcommand{\resumeEducation}[2]{
-    \noindent
+\newcommand{\resumeProjectHeading}[3]{
     \textbf{#1}
     \hfill
-    {\small\color{gray}#2}
+    \textit{\small #2}
+    \\
+    \textit{\small #3}
 }
 
-% ---------- Document ----------
 \begin{document}
 
-% ================= HEADER =================
+% =========================================================
+% HEADER
+% =========================================================
+
 \begin{center}
-    {\LARGE\bfseries Korra Praveen}\\[2pt]
+    {\LARGE \textbf{Korra Praveen}} \\[3pt]
 
-    {\small
-    \faEnvelope\ 
+    \small
     \href{mailto:korrapraveen7036@gmail.com}{korrapraveen7036@gmail.com}
-    \quad
-    \faPhone\ +91 70363 94044
-    \quad
-    \faMapMarker*\ Khammam, Telangana, India
-    }
+    \quad $|$ \quad
+    +91 70363 94044
+    \quad $|$ \quad
+    Khammam, Telangana, India
+    \\[3pt]
 
-    \\[1.5pt]
-
-    {\small
-    \faGithub\ 
-    \href{https://github.com/Praveen703639/Advanced-RPG}{GitHub}
-    \quad
-    \faLinkedin\ 
+    \href{https://github.com/Praveen703639}{GitHub}
+    \quad $|$ \quad
     \href{https://www.linkedin.com/in/korra-praveen}{LinkedIn}
-    }
 \end{center}
 
-% ================= SUMMARY =================
+% =========================================================
+% SUMMARY
+% =========================================================
+
 \section{SUMMARY}
 
-Gameplay Programmer specializing in Unreal Engine 5 and C++, with deep expertise in the Gameplay
-Ability System (GAS). Experienced in building scalable combat frameworks, AI behavior systems, and
-AAA-inspired gameplay mechanics from the ground up. Passionate about clean architecture, performance,
-and delivering polished player experiences.
+\small
+Gameplay Programmer specializing in Unreal Engine 5 and C++, with hands-on
+experience building gameplay systems using the Gameplay Ability System (GAS).
+Experienced in combat systems, AI, custom Ability Tasks, UI architecture,
+animation, and Niagara VFX.
 
-% ================= TECHNICAL SKILLS =================
+% =========================================================
+% TECHNICAL SKILLS
+% =========================================================
+
 \section{TECHNICAL SKILLS}
 
-\begin{tabular}{@{}>{\bfseries}p{1.65in} p{5.9in}@{}}
-Engines: & Unreal Engine 5, Godot \\[0.5pt]
-Languages: & C++, C, Python, Java, Blueprints \\[0.5pt]
-Gameplay Systems: & Gameplay Ability System (GAS), Animation Blueprints, Niagara VFX \\[0.5pt]
-AI \& Tools: & Behavior Trees, EQS, Custom Ability Tasks, Data Assets \\[0.5pt]
-DevOps: & Git, Git LFS, Conventional Commits, .gitattributes/.gitignore for UE5
-\end{tabular}
+\small
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{1.35in} X@{}}
+Languages
+    & C++, C, Python \\
 
-% ================= PROJECTS =================
+Engine
+    & Unreal Engine 5.6, Godot \\
+
+Gameplay
+    & Gameplay Ability System (GAS), Gameplay Tags, Gameplay Effects,
+      Custom Ability Tasks, Enhanced Input, Animation Blueprints \\
+
+AI
+    & Behavior Trees, EQS \\
+
+UI / VFX
+    & Common UI, Niagara VFX, Data Assets \\
+
+Tools
+    & Git, Git LFS, Visual Studio, Conventional Commits,
+      UE5 repository configuration
+\end{tabularx}
+
+% =========================================================
+% PROJECTS
+% =========================================================
+
 \section{PROJECTS}
 
-\resumeProject{Advanced RPG}{Unreal Engine 5 $\bullet$ C++ $\bullet$ GAS}
-
-\textit{Third-Person Action RPG with AAA-Inspired Combat Framework}
-\hfill
-\href{https://github.com/Praveen703639/Advanced-RPG}{\faGithub\ GitHub}
+\resumeProjectHeading
+    {Advanced RPG}
+    {Unreal Engine 5.6 $\bullet$ C++ $\bullet$ GAS}
+    {Third-Person Action RPG with a modular gameplay and combat framework
+     \hfill
+     \href{https://github.com/Praveen703639/Advanced-RPG}{GitHub}}
 
 \begin{itemize}
 
-    \item Architected a scalable GAS framework from scratch, enabling modular ability design across multiple
-    weapon types and character classes with clean separation of concerns.
+    \resumeItem{
+        Architected a modular GAS-based gameplay framework supporting
+        multiple abilities, weapon types, and character classes with
+        clean separation of gameplay responsibilities.
+    }
 
-    \item Implemented 15+ custom Ability Tasks including homing projectiles, wall projectile patterns,
-    expand-ring attacks, clone summoning, and enemy spawn systems for complex boss encounters.
+    \resumeItem{
+        Implemented 15+ custom Ability Tasks for gameplay behaviors
+        including homing projectiles, wall projectile patterns,
+        expanding-ring attacks, clone summoning, and enemy spawning.
+    }
 
-    \item Built a responsive combat system featuring light/heavy combo chains, active block \& parry with
-    timing-based counter-attacks, target locking, and dodge i-frames integrated via GAS Gameplay Cues.
+    \resumeItem{
+        Built a responsive combat system with light/heavy attack
+        combos, active block and parry, timing-based counter-attacks,
+        target locking, and dodge i-frames using GAS and Gameplay Cues.
+    }
 
-    \item Developed multi-phase Boss AI using Behavior Trees and EQS, supporting hand/leg attacks,
-    enemy summons (aerial \& ground), homing curved projectiles, and dynamic phase transitions.
+    \resumeItem{
+        Developed multi-phase boss AI using Behavior Trees and EQS,
+        supporting melee attacks, aerial and ground enemy summons,
+        homing curved projectiles, and dynamic phase transitions.
+    }
 
-    \item Created AAA-inspired special abilities: Wukong-style clone summoning, wolf summons, ice clone
-    decoys, character transformation, and multi-weapon rage modes with Niagara VFX integration.
+    \resumeItem{
+        Created ability-driven gameplay mechanics including clone
+        summoning, wolf summons, ice clone decoys, character
+        transformation, and multi-weapon rage modes with Niagara VFX.
+    }
 
-    \item Engineered a robust UI/FrontEnd architecture using the Common UI plugin with Activatable
-    Widgets, CommonButtonBase, and CommonTabListWidget; implemented AsyncActions for soft widget
-    pushing, confirm screens, and an OptionsDataRegistry with ListDataObjects for dynamic settings
-    management.
+    \resumeItem{
+        Engineered a Common UI-based frontend architecture using
+        Activatable Widgets, CommonButtonBase, and CommonTabListWidget;
+        implemented AsyncActions for widget transitions, confirmation
+        screens, and dynamic settings management.
+    }
 
 \end{itemize}
 
-% ================= EDUCATION =================
+% =========================================================
+% EDUCATION
+% =========================================================
+
 \section{EDUCATION}
 
-\resumeEducation
-{Indian Institute of Information Technology Ranchi}
-{Jharkhand, India}
+\textbf{Indian Institute of Information Technology Ranchi}
+\hfill
+\textit{Jharkhand, India}
 
 \textit{B.Tech in Artificial Intelligence and Data Science}
 \hfill
-{\small Expected April 2027}
+\textit{Expected April 2027}
 
-\begin{itemize}
-    \item 7\textsuperscript{th} Semester (Final Year). Relevant Coursework: Machine Learning, Deep Learning,
-    Data Structures \& Algorithms, Computer Graphics, DBMS. Completed 44-hour Udemy certification in
-    UE5/C++ Game Development.
-\end{itemize}
+\small
+7th Semester (Final Year)
+\quad $\bullet$ \quad
+Relevant Coursework: Machine Learning, Deep Learning,
+Data Structures \& Algorithms, Computer Graphics, DBMS.
 
-% ================= ADDITIONAL INFORMATION =================
+\small
+Completed a 44-hour Udemy certification in Unreal Engine 5 / C++ Game Development.
+
+% =========================================================
+% ADDITIONAL INFORMATION
+% =========================================================
+
 \section{ADDITIONAL INFORMATION}
 
 \begin{itemize}
-    \item Proficient in full UE5 C++ workflow: AnimInstances, SaveGame systems, UI Components,
-    AsyncActions, and Frontend subsystems.
 
-    \item Strong version control practices with Git LFS, conventional commits, and UE5-specific repository
-    configuration.
+    \resumeItem{
+        Full UE5 C++ workflow experience including AnimInstances,
+        SaveGame systems, UI Components, AsyncActions, and frontend
+        subsystems.
+    }
+
+    \resumeItem{
+        Strong version-control practices using Git and Git LFS,
+        including conventional commits and UE5-specific repository
+        configuration.
+    }
+
 \end{itemize}
 
 \end{document}
